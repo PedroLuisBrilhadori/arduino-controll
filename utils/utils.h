@@ -19,6 +19,7 @@ class Keyboard {
     public: 
         Keyboard();
         void write(char ch);
+        void begin();
 };
 
 int delay(int value); 

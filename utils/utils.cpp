@@ -12,6 +12,10 @@ Keyboard::Keyboard() {
 
 }
 
+void Keyboard::begin() {
+    
+}
+
 void Keyboard::write(char ch) {
 
 }
