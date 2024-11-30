@@ -1,3 +1,9 @@
+#include "./utils/serial.cpp"
+#include "./utils/utils.cpp"
+
+#include <iostream>
+
+using namespace std; 
 
 class Emulator {
     private: 

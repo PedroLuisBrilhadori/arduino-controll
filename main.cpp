@@ -1,8 +1,4 @@
-#include <iostream>
-#include "utilidades.cpp"
-#include "emulator.cpp"
-
-using namespace std;
+#include "./emulator.cpp"
  
 
 int main () {

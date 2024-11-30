@@ -1,7 +1,5 @@
 #include "emulator.h"
 
-using namespace std;
-
 
 Emulator::Emulator(
     const DataSerial& data
