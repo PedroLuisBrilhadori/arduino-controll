@@ -1,40 +1,30 @@
 #include "./task.h"
 
-TaskList::TaskList() {
-    size = 0;
-}
+Task::Task(char* buffer, int length) {
+    size = 0; 
 
-void TaskList::push(char* buffer) {
-    Element data; 
-    data = new Task;
-
-    data->value = buffer;
-    data->next = nullptr;
-
-    if(size == 0) {
-        start = data; 
-        end = data;
-    } else {
-        end->next = data;
-        end = data;
+    for(int index = 0; index < length; index++) {
+        char ch = buffer[index];
+        push(ch);
     }
-
-    size +=1;
 }
 
-char* TaskList::pop() {
-    char *buffer;
-    Element aux; 
+void Task::getTask(char* buffer) {
+    Element aux;  
+    aux = start; 
 
-    if(size == 0) return buffer;
+    for(int index = 0; index < size; index++) {
+        buffer[index] = aux->value; 
+        aux = aux->next;
+    }
+}
 
-    buffer = start->value;
-    aux = start;
+void Task::deleteTask() {
+    for(int index = 0; index < size; index++) {
+        pop();
+    }
+}
 
-    start = start->next; 
-    delete aux;
-
-    size -=1;
-
-    return buffer;
+int Task::getTaskSize() {
+    return size;
 }

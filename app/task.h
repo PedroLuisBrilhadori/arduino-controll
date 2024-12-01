@@ -1,19 +1,20 @@
-class TaskList {
-    private:
-        struct Task {
-            char *value;
-            Task *next;
-        };
-        typedef Task *Element;
-        Element start; 
+class Task {
+    private: 
+        int size = 0; 
+        struct Data {
+            char value; 
+            Data *next;
+        }; 
+        typedef Data *Element; 
+        Element start;
         Element end;
-        int size = 0;
-        
-        void push(char *buffer);
-        char* pop();
+
+        void push(char ch); 
+        char pop();
 
     public: 
-        TaskList();
-     
-
+        Task(char* buffer, int length);
+        int getTaskSize();
+        void getTask(char *buffer); 
+        void deleteTask();
 };

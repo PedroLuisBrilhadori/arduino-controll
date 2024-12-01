@@ -1,23 +1,16 @@
 #include "./emulator.cpp"
- 
+#include "./app/task.cpp" 
 
 int main () {
     DataSerial data; 
-    Emulator leonardo(data);
-    char ch;
- 
-    cout << "\t\tEMULAÇÃO INICIADA" << endl; 
+    TaskList task;
 
-    leonardo.setup(); 
+    char task[4] = {
+        2, 
+        75, 
+        65,
+        3, 
+    };
 
-    do {
-        ch = getchar();
-        if(ch != EOF) {
-            leonardo.serialInput(ch);
-        }
-
-        leonardo.loop();
-    } while(true);
-
-    return 0;
+    
 }
