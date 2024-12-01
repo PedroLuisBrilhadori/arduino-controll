@@ -15,3 +15,9 @@ char Serial::read() {
 void Serial::write(char ch) {
     return data.push(ch);
 }
+
+void Serial::readBytes(char *buffer, int length) {
+    for(int index = 0; index < length; index++) {
+        buffer[index] = data.pop();
+    }
+}

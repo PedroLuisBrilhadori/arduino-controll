@@ -19,5 +19,6 @@ class Serial {
         bool available();
         char read();
         void write(char ch);
+        void readBytes(char *buffer, int length);
 };
 

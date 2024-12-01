@@ -15,9 +15,9 @@ void Emulator::setup() {
 void Emulator::loop() {
     if(!Serial1.available()) return; 
 
-    char ch = Serial1.read(); 
-
-    cout << ch << endl;  
+    delay(1);
+    char array[25]; 
+    Serial1.readBytes(array, 10);
 }
 
 void Emulator::serialInput(char ch) {
