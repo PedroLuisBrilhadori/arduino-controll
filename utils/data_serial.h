@@ -2,7 +2,7 @@
  * classe utilizada para guardar os dados que seriam utilizado 
  * para "emular" comunicações que seriam feitas por serial
  * 
- * uma abstração para um "array" de caracteres, 
+ * uma abstração para uma fila de caracteres, 
  * com métodos de push & pop de dados em uma sequeência de caractere.
  * 
  * essa mesma estrutura deve ser utilizada por diferentes tipos de coisas, 
@@ -11,8 +11,14 @@
  */
 class DataSerial {
      private: 
-        char buffer[255];
-        int index;
+        struct Data {
+            char value; 
+            Data *next;
+        };
+        int size = 0;
+        typedef Data *Element; 
+        Element start; 
+        Element end;
 
     public:
         DataSerial();
