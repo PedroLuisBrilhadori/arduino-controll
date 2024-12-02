@@ -17,7 +17,6 @@ class Task {
 
     public: 
         Task(char* buffer);
-        int getTaskSize();
         void getData(char *buffer); 
         char getMode(); 
         bool isValid();
