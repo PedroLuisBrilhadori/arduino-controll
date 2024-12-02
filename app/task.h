@@ -8,13 +8,17 @@ class Task {
         typedef Data *Element; 
         Element start;
         Element end;
+        
+        char mode;
+        bool valid;
 
         void push(char ch); 
         char pop();
 
     public: 
-        Task(char* buffer, int length);
+        Task(char* buffer);
         int getTaskSize();
-        void getTask(char *buffer); 
-        void deleteTask();
+        void getData(char *buffer); 
+        char getMode(); 
+        bool isValid();
 };
